@@ -1,8 +1,79 @@
 ﻿@{
     Layout = "_LayoutRazor";
     ViewData["Title"] = "Razor Snack";
+
+
+    // Var Snack 1
+
+    string nome = "Francesco";
+    string cognome = "Marra";
+
+    // Var Snack 2 
+    int numberS2 = 10;
+
+    // Var Snack 3
+    string text = "nel mezzo del cammin di nostra vita";
+    int iS3 = 0;
+
+    // Area test
+
+    foreach(Char letter in text)
+    {
+        if(letter == 'a')
+        {
+            iS3++;
+        }
+    }
+
+    // Area test fine
 }
 
-<h1> Razor Snacks</h1>
+<h1> Razor Snacks 1 </h1>
 
-<h2> </h2>
+<h2> Ciao @nome @cognome</h2>
+
+<h1> Razor Snacks 2</h1>
+
+<h2>
+    @for (var i = 0; i <= @numberS2; i++)
+    {
+        <span>  - @i  </span>
+    }
+</h2>
+
+<h1>Razor Snacks 3 </h1>
+
+<h2>
+    @text contiene @iS3;
+
+</h2>
+
+<h1>Razor Snack 4</h1>
+
+
+    
+      
+<h2>
+    @{
+        List<int> NumeriInteri = new List<int>(20);
+
+      
+
+        for (int i = 0; i < 20; i++)
+        {
+            int numeroCasuale = new Random().Next(1, 91);
+            int numeroCasuale2 = new Random().Next(1, 91);
+
+     
+            if (numeroCasuale > 20 && numeroCasuale < 70)
+            {
+                NumeriInteri.Add(numeroCasuale);
+
+                // Area di lavoro
+               <span> @numeroCasuale </span>
+            }
+        }
+    }
+
+
+</h2>
