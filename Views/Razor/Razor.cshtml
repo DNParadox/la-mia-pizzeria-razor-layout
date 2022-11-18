@@ -62,14 +62,12 @@
         for (int i = 0; i < 20; i++)
         {
             int numeroCasuale = new Random().Next(1, 91);
-            int numeroCasuale2 = new Random().Next(1, 91);
 
      
             if (numeroCasuale > 20 && numeroCasuale < 70)
             {
                 NumeriInteri.Add(numeroCasuale);
 
-                // Area di lavoro
                <span> @numeroCasuale </span>
             }
         }
@@ -77,3 +75,29 @@
 
 
 </h2>
+
+
+<h1> Razor Snack 5</h1>
+
+<h2>
+        La data e l'ora di oggi è : @DateTime.Now
+ </h2>
+
+
+<h1> Razor Snack 6 </h1>
+
+
+<h2>
+    @{
+        //Dichiaro la giornata di oggi
+        DateTime today = DateTime.Now;
+
+        //Dopo averla dichiarata, scalo con AddDays 
+        DateTime WeekAgo = today.AddDays(-7);
+        //Dichiaro un Anno in più con AddYears
+        DateTime YearsAgo = today.AddYears(1);
+        // Dichiaro facendo "Anno" "Mese" "Giorno"
+        var year = YearsAgo.ToString("yyyy MMMM dddd");
+        @year
+    }
+        </h2>
